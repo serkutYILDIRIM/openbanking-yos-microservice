@@ -94,6 +94,26 @@ public class ConsentServiceImpl implements ConsentService {
         return toResponse(saved);
     }
 
+    @Override
+    public ConsentResponse getConsent(String rizaNo, String xAspspCode, String xTppCode) {
+        ConsentEntity entity = consentRepository.findByRizaNo(rizaNo)
+                .orElseThrow(() -> new OhvpsException("TR.OHVPS.Resource.NotFound"));
+
+        if (!entity.getHhsKod().equals(xAspspCode)) {
+            throw new OhvpsException("TR.OHVPS.Connection.InvalidASPSP");
+        }
+
+        if (!entity.getYosKod().equals(xTppCode)) {
+            throw new OhvpsException("TR.OHVPS.Connection.InvalidTPP");
+        }
+
+        if (entity.getRizaDrm() == ConsentStatus.K || entity.getRizaDrm() == ConsentStatus.I) {
+            throw new OhvpsException("TR.OHVPS.Resource.InvalidStatus");
+        }
+
+        return toResponse(entity);
+    }
+
     // -----------------------------------------------------------------------
     // Yardımcı: Entity → ConsentResponse
     // -----------------------------------------------------------------------
