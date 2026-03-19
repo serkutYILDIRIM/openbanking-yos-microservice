@@ -78,7 +78,7 @@ public class PaymentServiceImpl implements PaymentService {
                 .odmAcklm(odmBsltm.getOdmAyr().getOdmAcklm())
                 .build();
 
-        consentEntity.setRizaDrm(ConsentStatus.K);
+        consentEntity.setRizaDrm(ConsentStatus.E);
         consentRepository.save(consentEntity);
 
         PaymentEntity savedPayment = paymentRepository.save(entity);
@@ -158,6 +158,26 @@ public class PaymentServiceImpl implements PaymentService {
                 .odmBsltm(odmBsltm)
                 .odmBlg(odmBlg)
                 .build();
+    }
+
+    @Override
+    public PaymentResponse getPayment(String odmEmriNo, String xAspspCode, String xTppCode) {
+
+        PaymentEntity entity = paymentRepository.findByOdmEmriNo(odmEmriNo)
+                .orElseThrow(() -> new OhvpsException("TR.OHVPS.Resource.NotFound"));
+
+        if (!entity.getHhsKod().equals(xAspspCode)) {
+            throw new OhvpsException("TR.OHVPS.Connection.InvalidASPSP");
+        }
+
+        if (!entity.getYosKod().equals(xTppCode)) {
+            throw new OhvpsException("TR.OHVPS.Connection.InvalidTPP");
+        }
+
+        ConsentEntity consentEntity = consentRepository.findByRizaNo(entity.getRizaNo())
+                .orElseThrow(() -> new OhvpsException("TR.OHVPS.Resource.NotFound"));
+
+        return toResponse(entity, consentEntity);
     }
 }
 
