@@ -6,5 +6,7 @@ import com.openbanking.yos.domain.payment.dto.response.PaymentResponse;
 public interface PaymentService {
 
     PaymentResponse createPayment(PaymentRequest request, String xRequestId, String xAspspCode, String xTppCode);
+
+    PaymentResponse getPayment(String odmEmriNo, String xAspspCode, String xTppCode);
 }
 
