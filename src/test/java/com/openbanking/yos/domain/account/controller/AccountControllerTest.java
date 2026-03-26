@@ -1,7 +1,5 @@
 package com.openbanking.yos.domain.account.controller;
 
-import com.openbanking.yos.common.enums.AccountStatus;
-import com.openbanking.yos.common.enums.AccountType;
 import com.openbanking.yos.common.exception.OhvpsException;
 import com.openbanking.yos.domain.account.dto.response.AccountListResponse;
 import com.openbanking.yos.domain.account.dto.response.AccountResponse;
@@ -35,9 +33,9 @@ class AccountControllerTest {
 
     @BeforeEach
     void setUp() {
-        AccountResponse.HesapBilgileri hesapBilgileri = AccountResponse.HesapBilgileri.builder()
+        AccountResponse.HesapTemel hesapTemel = AccountResponse.HesapTemel.builder()
                 .hspRef("hsp-ref-001")
-                .hspTur(AccountType.B)
+                .hspTur("B")
                 .hspTip("VADESIZ")
                 .hspNo("TR330006100519786457841326")
                 .hspShb("12345678")
@@ -45,7 +43,7 @@ class AccountControllerTest {
                 .kisaAd("Vadesiz TRY")
                 .prBrm("TRY")
                 .hspUrunAdi("Bireysel Vadesiz Hesap")
-                .hspDrm(AccountStatus.AKTIF)
+                .hspDrm("AKTIF")
                 .build();
 
         AccountResponse.HesapDetay hesapDetay = AccountResponse.HesapDetay.builder()
@@ -54,7 +52,7 @@ class AccountControllerTest {
 
         accountResponse = AccountResponse.builder()
                 .rizaNo("riza-123")
-                .hspTml(hesapBilgileri)
+                .hspTml(hesapTemel)
                 .hspDty(hesapDetay)
                 .build();
 
