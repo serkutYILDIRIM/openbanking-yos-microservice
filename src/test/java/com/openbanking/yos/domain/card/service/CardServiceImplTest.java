@@ -17,4 +17,9 @@ class CardServiceImplTest {
     @BeforeEach
     void setUp() {
     }
+
+    @Test
+    void shouldCreateServiceSuccessfully() {
+        assertNotNull(cardService);
+    }
 }
