@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AccountEntityTest {
 
@@ -65,5 +64,36 @@ class AccountEntityTest {
 
         assertNotNull(entity);
         assertEquals(hspRef, entity.getHspRef());
+    }
+
+    @Test
+    void shouldCreateAccountEntityWithAllArgsConstructor() {
+        LocalDateTime now = LocalDateTime.now();
+        AccountEntity entity = new AccountEntity(1L, "ref", "riza", "no", "shb", "sube", "kisa", "TRY", "B", "VADESIZ", "urun", "AKTIF", now, "8000", "9000", now, now);
+
+        assertNotNull(entity);
+        assertEquals(1L, entity.getId());
+        assertEquals("ref", entity.getHspRef());
+    }
+
+    @Test
+    void shouldTestEqualsAndHashCode() {
+        AccountEntity entity1 = AccountEntity.builder().id(1L).hspRef("ref").build();
+        AccountEntity entity2 = AccountEntity.builder().id(1L).hspRef("ref").build();
+        AccountEntity entity3 = AccountEntity.builder().id(2L).hspRef("farkli").build();
+
+        assertEquals(entity1, entity2);
+        assertEquals(entity1.hashCode(), entity2.hashCode());
+        assertNotEquals(entity1, entity3);
+    }
+
+    @Test
+    void shouldTestToString() {
+        AccountEntity entity = AccountEntity.builder().id(1L).hspRef("ref").build();
+        String toString = entity.toString();
+
+        assertNotNull(toString);
+        assertTrue(toString.contains("id=1"));
+        assertTrue(toString.contains("hspRef=ref"));
     }
 }
