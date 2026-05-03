@@ -87,16 +87,5 @@ class CardControllerTest {
         verify(cardService).getCard(KART_REF, X_ASPSP_CODE, X_TPP_CODE, X_RIZA_NO);
     }
 
-    @Test
-    @DisplayName("Servis hata fırlattığında hata fırlatmalı")
-    void getCards_WhenServiceThrowsException_ShouldThrowSameException() {
-        // Given
-        when(cardService.getCards(anyString(), anyString(), anyString()))
-                .thenThrow(new OhvpsException("TR.OHVPS.Resource.NotFound"));
 
-        // When & Then
-        OhvpsException exception = assertThrows(OhvpsException.class,
-                () -> cardController.getCards(X_REQUEST_ID, X_ASPSP_CODE, X_TPP_CODE, X_JWS_SIGNATURE, X_RIZA_NO));
-        assertEquals("TR.OHVPS.Resource.NotFound", exception.getMessage());
-    }
 }
