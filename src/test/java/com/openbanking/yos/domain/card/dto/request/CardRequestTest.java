@@ -22,6 +22,7 @@ class CardRequestTest {
 
         assertNotNull(request1);
         assertNotNull(request2);
+        
         assertNotSame(request1, request2);
     }
     
