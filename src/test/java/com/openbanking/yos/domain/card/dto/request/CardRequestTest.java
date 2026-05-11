@@ -13,6 +13,7 @@ class CardRequestTest {
 
         assertNotNull(request);
     }
+    
     @Test
     @DisplayName("CardRequest farklı nesneler birbirinden bağımsız olmalı")
     void shouldCreateIndependentInstances() {
@@ -23,16 +24,19 @@ class CardRequestTest {
         assertNotNull(request2);
         assertNotSame(request1, request2);
     }
+    
     @Test
     @DisplayName("CardRequest doğru pakette tanımlanmış olmalı")
     void shouldBeInCorrectPackage() {
         assertEquals("com.openbanking.yos.domain.card.dto.request", CardRequest.class.getPackageName());
     }
+    
     @Test
     @DisplayName("CardRequest public sınıf olmalı")
     void shouldBePublicClass() {
         assertTrue(java.lang.reflect.Modifier.isPublic(CardRequest.class.getModifiers()));
     }
+    
     @Test
     @DisplayName("CardRequest varsayılan constructor'a sahip olmalı")
     void shouldHaveDefaultConstructor() throws NoSuchMethodException {
