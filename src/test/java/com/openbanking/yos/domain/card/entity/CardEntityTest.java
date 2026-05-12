@@ -31,6 +31,7 @@ class CardEntityTest {
                 .yosKod("YOS01")
                 .olusZmn(now)
                 .gnclZmn(now)
+            
                 .build();
 
         assertNotNull(card);
