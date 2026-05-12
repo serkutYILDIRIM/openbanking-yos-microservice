@@ -1,9 +1,7 @@
 package com.openbanking.yos.domain.card.entity;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.time.LocalDateTime;
+import org.junit.jupiter.api.Test;import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
