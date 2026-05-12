@@ -35,6 +35,7 @@ class CardEntityTest {
                 .build();
 
         assertNotNull(card);
+        
         assertEquals(1L, card.getId());
         assertEquals("riza-123", card.getRizaNo());
         assertEquals("kart-456", card.getKartRef());
