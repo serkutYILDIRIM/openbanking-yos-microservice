@@ -10,6 +10,7 @@ class OpenApiConfigTest {
 
     @Test
     @DisplayName("OpenApiConfig nesnesi başarıyla oluşturulmalı")
+    
     void shouldCreateOpenApiConfig() {
         OpenApiConfig config = new OpenApiConfig();
 
