@@ -26,6 +26,7 @@ class ConsentControllerTest {
    
    @Mock
     private ConsentService consentService;
+   
     @InjectMocks
     private ConsentController consentController;
 
