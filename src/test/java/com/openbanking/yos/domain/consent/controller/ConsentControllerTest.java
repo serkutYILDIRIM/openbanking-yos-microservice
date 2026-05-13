@@ -23,10 +23,8 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class ConsentControllerTest {
-
-    @Mock
+   @Mock
     private ConsentService consentService;
-
     @InjectMocks
     private ConsentController consentController;
 
