@@ -16,10 +16,8 @@ public class CardResponse {
 
     @JsonProperty("rizaNo")
     private String rizaNo;
-
     @JsonProperty("kartRef")
     private String kartRef;
-
     @JsonProperty("kartNo")
     private String kartNo;
 
