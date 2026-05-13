@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RestClientConfigTest {
+    
     @Test
     @DisplayName("RestClientConfig nesnesi başarıyla oluşturulmalı")
     void shouldCreateRestClientConfig() {
@@ -14,11 +15,13 @@ class RestClientConfigTest {
 
         assertNotNull(config);
     }
+    
     @Test
     @DisplayName("RestClientConfig @Configuration annotation'a sahip olmalı")
     void shouldHaveConfigurationAnnotation() {
         assertTrue(RestClientConfig.class.isAnnotationPresent(Configuration.class));
     }
+    
     @Test
     @DisplayName("RestClientConfig farklı nesneler birbirinden bağımsız olmalı")
     void shouldCreateIndependentInstances() {
