@@ -118,6 +118,7 @@ class ConsentEntityTest {
         assertEquals(entity1.hashCode(), entity2.hashCode());
         assertNotEquals(entity1, entity3);
     }
+    
     @Test
     void shouldTestToString() {
         ConsentEntity entity = ConsentEntity.builder().id(1L).rizaNo("riza").build();
