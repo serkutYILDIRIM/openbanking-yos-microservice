@@ -107,6 +107,7 @@ class ConsentEntityTest {
         assertEquals("01", entity.getOdmAmc());
         assertEquals("ref", entity.getRefBlg());
     }
+    
     @Test
     void shouldTestEqualsAndHashCode() {
         ConsentEntity entity1 = ConsentEntity.builder().id(1L).rizaNo("riza").build();
