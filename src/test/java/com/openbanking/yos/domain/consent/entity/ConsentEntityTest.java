@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConsentEntityTest {
+    
     @Test
     void shouldCreateConsentEntityWithBuilder() {
         String rizaNo = "riza-12345";
@@ -67,6 +68,7 @@ class ConsentEntityTest {
         assertEquals("01", entity.getOdmAmc());
         assertEquals("REF-001", entity.getRefBlg());
     }
+    
     @Test
     void shouldCreateConsentEntityWithNoArgsConstructor() {
         ConsentEntity entity = new ConsentEntity();
@@ -76,6 +78,7 @@ class ConsentEntityTest {
         assertNotNull(entity);
         assertEquals(rizaNo, entity.getRizaNo());
     }
+    
     @Test
     void shouldCreateConsentEntityWithAllArgsConstructor() {
         LocalDateTime now = LocalDateTime.now();
