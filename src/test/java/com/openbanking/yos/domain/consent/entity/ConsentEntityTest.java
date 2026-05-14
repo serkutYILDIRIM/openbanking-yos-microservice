@@ -68,7 +68,6 @@ class ConsentEntityTest {
         assertEquals("01", entity.getOdmAmc());
         assertEquals("REF-001", entity.getRefBlg());
     }
-
     @Test
     void shouldCreateConsentEntityWithNoArgsConstructor() {
         ConsentEntity entity = new ConsentEntity();
@@ -78,7 +77,6 @@ class ConsentEntityTest {
         assertNotNull(entity);
         assertEquals(rizaNo, entity.getRizaNo());
     }
-
     @Test
     void shouldCreateConsentEntityWithAllArgsConstructor() {
         LocalDateTime now = LocalDateTime.now();
@@ -107,7 +105,6 @@ class ConsentEntityTest {
         assertEquals("01", entity.getOdmAmc());
         assertEquals("ref", entity.getRefBlg());
     }
-
     @Test
     void shouldTestEqualsAndHashCode() {
         ConsentEntity entity1 = ConsentEntity.builder().id(1L).rizaNo("riza").build();
