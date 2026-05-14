@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConsentEntityTest {
-
     @Test
     void shouldCreateConsentEntityWithBuilder() {
         String rizaNo = "riza-12345";
@@ -115,7 +114,6 @@ class ConsentEntityTest {
         assertEquals(entity1.hashCode(), entity2.hashCode());
         assertNotEquals(entity1, entity3);
     }
-
     @Test
     void shouldTestToString() {
         ConsentEntity entity = ConsentEntity.builder().id(1L).rizaNo("riza").build();
@@ -124,5 +122,4 @@ class ConsentEntityTest {
         assertNotNull(toString);
         assertTrue(toString.contains("id=1"));
         assertTrue(toString.contains("rizaNo=riza"));
-    }
 }
