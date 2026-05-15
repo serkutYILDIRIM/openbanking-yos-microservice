@@ -126,4 +126,5 @@ class ConsentEntityTest {
         assertNotNull(toString);
         assertTrue(toString.contains("id=1"));
         assertTrue(toString.contains("rizaNo=riza"));
+    }
 }
