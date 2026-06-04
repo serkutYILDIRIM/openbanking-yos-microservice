@@ -121,11 +121,13 @@ class ConsentEntityTest {
     
     @Test
     void shouldTestToString() {
+        
         ConsentEntity entity = ConsentEntity.builder().id(1L).rizaNo("riza").build();
         String toString = entity.toString();
 
         assertNotNull(toString);
         assertTrue(toString.contains("id=1"));
         assertTrue(toString.contains("rizaNo=riza"));
+        
     }
 }
