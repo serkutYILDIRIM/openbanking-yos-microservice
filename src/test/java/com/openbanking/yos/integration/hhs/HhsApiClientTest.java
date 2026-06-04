@@ -25,12 +25,14 @@ class HhsApiClientTest {
     @Test
     @DisplayName("HhsApiClient farklı nesneler birbirinden bağımsız olmalı")
     void shouldCreateIndependentInstances() {
+        
         HhsApiClient client1 = new HhsApiClient();
         HhsApiClient client2 = new HhsApiClient();
 
         assertNotNull(client1);
         assertNotNull(client2);
         assertNotSame(client1, client2);
+        
     }
 }
 
