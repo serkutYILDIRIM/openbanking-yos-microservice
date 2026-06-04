@@ -11,6 +11,7 @@ class ConsentEntityTest {
     
     @Test
     void shouldCreateConsentEntityWithBuilder() {
+        
         String rizaNo = "riza-12345";
         String hhsKod = "1234";
         String yosKod = "5678";
@@ -70,12 +71,14 @@ class ConsentEntityTest {
     
     @Test
     void shouldCreateConsentEntityWithNoArgsConstructor() {
+        
         ConsentEntity entity = new ConsentEntity();
         String rizaNo = "riza-67890";
         entity.setRizaNo(rizaNo);
 
         assertNotNull(entity);
         assertEquals(rizaNo, entity.getRizaNo());
+        
     }
     
     @Test
@@ -120,11 +123,13 @@ class ConsentEntityTest {
     
     @Test
     void shouldTestToString() {
+        
         ConsentEntity entity = ConsentEntity.builder().id(1L).rizaNo("riza").build();
         String toString = entity.toString();
 
         assertNotNull(toString);
         assertTrue(toString.contains("id=1"));
         assertTrue(toString.contains("rizaNo=riza"));
+        
     }
 }
