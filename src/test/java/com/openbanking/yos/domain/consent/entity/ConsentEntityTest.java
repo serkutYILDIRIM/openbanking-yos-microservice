@@ -11,6 +11,7 @@ class ConsentEntityTest {
     
     @Test
     void shouldCreateConsentEntityWithBuilder() {
+        
         String rizaNo = "riza-12345";
         String hhsKod = "1234";
         String yosKod = "5678";
