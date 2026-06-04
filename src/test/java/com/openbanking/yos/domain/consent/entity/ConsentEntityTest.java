@@ -71,12 +71,14 @@ class ConsentEntityTest {
     
     @Test
     void shouldCreateConsentEntityWithNoArgsConstructor() {
+        
         ConsentEntity entity = new ConsentEntity();
         String rizaNo = "riza-67890";
         entity.setRizaNo(rizaNo);
 
         assertNotNull(entity);
         assertEquals(rizaNo, entity.getRizaNo());
+        
     }
     
     @Test
