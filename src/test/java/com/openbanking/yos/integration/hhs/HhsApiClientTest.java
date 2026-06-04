@@ -19,7 +19,9 @@ class HhsApiClientTest {
     @Test
     @DisplayName("HhsApiClient @Component annotation'a sahip olmalı")
     void shouldHaveComponentAnnotation() {
+        
         assertTrue(HhsApiClient.class.isAnnotationPresent(Component.class));
+        
     }
 
     @Test
