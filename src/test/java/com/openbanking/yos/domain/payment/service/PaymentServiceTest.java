@@ -51,6 +51,8 @@ class PaymentServiceTest {
 
     @Test
     void shouldBeImplementedByPaymentServiceImpl() {
+        
         assertTrue(PaymentService.class.isAssignableFrom(PaymentServiceImpl.class));
+        
     }
 }
