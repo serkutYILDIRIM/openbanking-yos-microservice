@@ -35,18 +35,24 @@ class PaymentServiceTest {
 
     @Test
     void shouldHaveExactlyTwoDeclaredMethods() {
+        
         Method[] methods = PaymentService.class.getDeclaredMethods();
 
         assertEquals(2, methods.length);
+        
     }
 
     @Test
     void shouldBeInCorrectPackage() {
+        
         assertEquals("com.openbanking.yos.domain.payment.service", PaymentService.class.getPackageName());
+        
     }
 
     @Test
     void shouldBeImplementedByPaymentServiceImpl() {
+        
         assertTrue(PaymentService.class.isAssignableFrom(PaymentServiceImpl.class));
+        
     }
 }
