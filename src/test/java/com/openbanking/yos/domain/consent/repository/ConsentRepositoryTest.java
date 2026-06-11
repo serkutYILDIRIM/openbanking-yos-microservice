@@ -39,6 +39,7 @@ class ConsentRepositoryTest {
 
     @Test
     void shouldHaveEntityTypeAsConsentEntity() {
+        
         java.lang.reflect.Type[] genericInterfaces = ConsentRepository.class.getGenericInterfaces();
 
         assertNotNull(genericInterfaces);
