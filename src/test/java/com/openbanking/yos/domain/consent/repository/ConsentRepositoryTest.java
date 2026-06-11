@@ -31,6 +31,7 @@ class ConsentRepositoryTest {
 
     @Test
     void shouldHaveCorrectGenericTypes() {
+        
         Class<?>[] interfaces = ConsentRepository.class.getInterfaces();
 
         assertEquals(1, interfaces.length);
@@ -51,6 +52,7 @@ class ConsentRepositoryTest {
 
     @Test
     void shouldBeInCorrectPackage() {
+        
         assertEquals("com.openbanking.yos.domain.consent.repository", ConsentRepository.class.getPackageName());
     }
 
