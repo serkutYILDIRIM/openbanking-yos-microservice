@@ -19,10 +19,12 @@ class ConsentRepositoryTest {
 
     @Test
     void shouldHaveFindByRizaNoMethod() throws NoSuchMethodException {
+        
         Method method = ConsentRepository.class.getDeclaredMethod("findByRizaNo", String.class);
 
         assertNotNull(method);
         assertEquals(Optional.class, method.getReturnType());
+        
     }
 
     @Test
