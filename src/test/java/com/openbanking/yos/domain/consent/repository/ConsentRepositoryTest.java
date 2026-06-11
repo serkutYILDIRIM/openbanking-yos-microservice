@@ -58,6 +58,7 @@ class ConsentRepositoryTest {
 
     @Test
     void shouldHaveExactlyOneDeclaredMethod() {
+        
         Method[] methods = ConsentRepository.class.getDeclaredMethods();
 
         assertEquals(1, methods.length);
