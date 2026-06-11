@@ -13,8 +13,10 @@ class ConsentRepositoryTest {
 
     @Test
     void shouldBeInterfaceExtendingJpaRepository() {
+        
         assertTrue(ConsentRepository.class.isInterface());
         assertTrue(JpaRepository.class.isAssignableFrom(ConsentRepository.class));
+        
     }
 
     @Test
