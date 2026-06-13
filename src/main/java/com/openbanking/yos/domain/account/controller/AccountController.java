@@ -20,6 +20,7 @@ public class AccountController {
 
     @GetMapping("/hesaplar")
     public ResponseEntity<AccountListResponse> getAccounts(
+        
             @RequestHeader("x-request-id")    String xRequestId,
             @RequestHeader("x-aspsp-code")    String xAspspCode,
             @RequestHeader("x-tpp-code")      String xTppCode,
@@ -28,6 +29,7 @@ public class AccountController {
 
         AccountListResponse response = accountService.getAccounts(xAspspCode, xTppCode, xRizaNo);
         return ResponseEntity.ok(response);
+        
     }
 
     @GetMapping("/hesaplar/{hspRef}")
