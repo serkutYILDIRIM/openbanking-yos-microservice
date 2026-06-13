@@ -12,8 +12,10 @@ class CardMapperTest {
 
     @Test
     void shouldCreateMapper() {
+        
         CardMapper mapper = new CardMapper() {};
         assertNotNull(mapper);
+        
     }
 
     @Test
