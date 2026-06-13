@@ -33,8 +33,10 @@ class CardMapperTest {
 
     @Test
     void shouldCreateCardTransactionResponse() {
+        
         CardTransactionResponse response = new CardTransactionResponse();
         assertNotNull(response);
+        
     }
 
     @Test
