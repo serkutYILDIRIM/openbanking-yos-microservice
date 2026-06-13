@@ -43,7 +43,6 @@ public class AccountController {
 
         AccountResponse response = accountService.getAccount(hspRef, xAspspCode, xTppCode, xRizaNo);
         return ResponseEntity.ok(response);
-        
     }
 }
 
