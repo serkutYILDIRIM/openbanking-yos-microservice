@@ -26,6 +26,7 @@ class CardMapperTest {
 
     @Test
     void shouldCreateCardResponse() {
+        
         CardResponse response = new CardResponse();
         assertNotNull(response);
     }
